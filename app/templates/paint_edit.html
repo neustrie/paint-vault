@@ -5,7 +5,7 @@
  <label>Code<input name="code" value="{{p.code}}"></label><label>Réf. AV<input name="av_ref" value="{{p.av_ref}}" size="5"></label>
  <label>Nom<input name="name" value="{{p.name}}" required></label><label>Type<input name="type" value="{{p.type}}"></label>
  <label>Statut<select name="status">{% for k,v in STATUTS.items() %}<option value="{{k}}" {{'selected' if k==p.status}}>{{v}}</option>{% endfor %}</select></label>
- <label>Usage<input name="usage" value="{{p.usage}}"></label><button>Enregistrer</button></form>
+ <label>Couleur (approx.)<input type="color" name="hex" value="{{p.hex or '#808080'}}"></label><label>Usage<input name="usage" value="{{p.usage}}"></label><button>Enregistrer</button></form>
 {% if used %}<p>Utilisée dans : {% for u in used %}<a href="/projets/{{u.id}}">{{u.name}}</a>{{', ' if not loop.last}}{% endfor %}</p>
 {% else %}<form method="post" action="/paints/{{p.id}}/delete"><button class="dng">Supprimer</button></form>{% endif %}
 <p><a href="/">← Retour</a></p>{% endblock %}

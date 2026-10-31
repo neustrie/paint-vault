@@ -11,7 +11,7 @@
 <table><tr><th>Marque / gamme</th><th>Code</th><th>Nom</th><th class="hide-m">Type</th><th>Statut</th><th></th></tr>
 {% for p in paints %}<tr>
 <td>{{p.brand}}<br><span class="mut">{{p.range}}</span></td><td>{{p.code}}{% if p.av_ref %}<br><span class="mut">AV {{p.av_ref}}</span>{% endif %}</td>
-<td><a href="/paints/{{p.id}}">{{p.name}}</a>{% if p.usage %}<br><span class="mut">{{p.usage}}</span>{% endif %}</td>
+<td><span class="sw" style="background:{{p.hex or 'transparent'}}" title="{{p.hex or 'pas de couleur'}}"></span><a href="/paints/{{p.id}}">{{p.name}}</a>{% if p.usage %}<br><span class="mut">{{p.usage}}</span>{% endif %}</td>
 <td class="hide-m">{{p.type}}</td><td><span class="badge s-{{p.status}}">{{STATUTS[p.status]}}</span></td>
 <td>{% if p.status=='en_stock' %}<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="vide"><input type="hidden" name="next" value="{{ request.url.path }}?{{ request.url.query }}"><button class="dng">Pot vide</button></form>
 {% else %}<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="en_stock"><input type="hidden" name="next" value="{{ request.url.path }}?{{ request.url.query }}"><button class="sec">Reçu</button></form>{% endif %}</td></tr>
@@ -22,5 +22,5 @@
  <label>Gamme<input name="range"></label><label>Code<input name="code"></label><label>Réf. AV<input name="av_ref" size="5"></label>
  <label>Nom<input name="name" required></label>
  <label>Type<input name="type" value="Peinture acrylique" list="tl"></label><datalist id="tl">{% for t in types %}<option>{{t}}</option>{% endfor %}</datalist>
- <label>Usage<input name="usage"></label><button>Ajouter</button></form>
+ <label>Couleur<input type="color" name="hex" value="#808080"></label><label>Usage<input name="usage"></label><button>Ajouter</button></form>
 {% endblock %}

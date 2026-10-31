@@ -8,7 +8,7 @@
  <form class="inline" method="post" action="/sections/{{s.id}}/delete"><button class="sec">Supprimer l'élément</button></form></div>
  {% if s.note %}<div class="mut">{{s.note}}</div>{% endif %}
  {% if x.paints|length>1 %}<div class="mut">Mélange :</div>{% endif %}
- <ul>{% for sp in x.paints %}<li>{% if x.paints|length>1 and sp.parts %}{{sp.parts}} part(s) · {% endif %}<b>{{sp.name}}</b> <span class="mut">{{sp.brand}} {{sp.code}}</span>
+ <ul>{% for sp in x.paints %}<li>{% if x.paints|length>1 and sp.parts %}{{sp.parts}} part(s) · {% endif %}<span class="sw sw-s" style="background:{{sp.hex or 'transparent'}}"></span><b>{{sp.name}}</b> <span class="mut">{{sp.brand}} {{sp.code}}</span>
  {% if sp.status!='en_stock' %}<span class="badge s-{{sp.status}}">{{STATUTS[sp.status]}}</span>{% endif %}
  <form class="inline" method="post" action="/section_paints/{{sp.id}}/delete"><button class="sec">×</button></form></li>{% endfor %}</ul>
  <form class="row" method="post" action="/sections/{{s.id}}/paints" style="margin:0">

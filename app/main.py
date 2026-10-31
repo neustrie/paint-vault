@@ -1,4 +1,4 @@
-import asyncio, csv, io, os, sqlite3, uuid, shutil
+import asyncio, csv, io, os, re, sqlite3, uuid, shutil
 from contextlib import asynccontextmanager, closing
 from datetime import datetime
 from pathlib import Path
@@ -21,7 +21,7 @@ SCHEMA = """
 CREATE TABLE IF NOT EXISTS paints(
   id INTEGER PRIMARY KEY, brand TEXT NOT NULL, range TEXT DEFAULT '', code TEXT DEFAULT '',
   av_ref TEXT DEFAULT '', name TEXT NOT NULL, type TEXT DEFAULT 'Peinture acrylique',
-  status TEXT NOT NULL DEFAULT 'en_stock', usage TEXT DEFAULT '', updated TEXT);
+  status TEXT NOT NULL DEFAULT 'en_stock', usage TEXT DEFAULT '', updated TEXT, hex TEXT DEFAULT '');
 CREATE TABLE IF NOT EXISTS projects(
   id INTEGER PRIMARY KEY, name TEXT NOT NULL, game TEXT DEFAULT '', scale TEXT DEFAULT '',
   faction TEXT DEFAULT '', notes TEXT DEFAULT '');
@@ -47,20 +47,27 @@ def init():
     with closing(db()) as c:
         c.execute("PRAGMA journal_mode=WAL")
         c.executescript(SCHEMA)
+        if "hex" not in [r[1] for r in c.execute("PRAGMA table_info(paints)")]:
+            c.execute("ALTER TABLE paints ADD COLUMN hex TEXT DEFAULT ''")
         if c.execute("SELECT COUNT(*) FROM paints").fetchone()[0] == 0:
             seed = json.loads((BASE / "seed.json").read_text(encoding="utf-8"))
             now = datetime.now().isoformat(timespec="seconds")
             c.executemany(
                 "INSERT INTO paints(brand,range,code,av_ref,name,type,status,usage,updated) VALUES(?,?,?,?,?,?,?,?,?)",
                 [(p["brand"], p["range"], p["code"], p.get("av_ref", ""), p["name"], p["type"], p["status"], p.get("usage", ""), now) for p in seed])
+        # couleurs approximatives (seed) : ne remplit que les peintures sans couleur
+        seed = json.loads((BASE / "seed.json").read_text(encoding="utf-8"))
+        for p in seed:
+            if p.get("hex"):
+                c.execute("UPDATE paints SET hex=? WHERE (hex IS NULL OR hex='') AND brand=? AND code=? AND name=?", (p["hex"], p["brand"], p["code"], p["name"]))
         c.commit()
 
 def export_csv_text():
     with closing(db()) as c:
-        rows = c.execute("SELECT brand,range,code,av_ref,name,type,status,usage FROM paints ORDER BY brand,range,code,name").fetchall()
+        rows = c.execute("SELECT brand,range,code,av_ref,name,type,hex,status,usage FROM paints ORDER BY brand,range,code,name").fetchall()
     buf = io.StringIO(); w = csv.writer(buf, delimiter=";")
-    w.writerow(["Marque", "Gamme", "Code", "Réf. AV", "Nom", "Type", "Statut", "Usage"])
-    for r in rows: w.writerow([*list(r)[:6], STATUTS.get(r["status"], r["status"]), r["usage"]])
+    w.writerow(["Marque", "Gamme", "Code", "Réf. AV", "Nom", "Type", "Couleur", "Statut", "Usage"])
+    for r in rows: w.writerow([*list(r)[:7], STATUTS.get(r["status"], r["status"]), r["usage"]])
     return buf.getvalue()
 
 def write_export():
@@ -108,10 +115,10 @@ def inventory(request: Request, q: str = "", brand: str = "", type: str = "", st
 
 @app.post("/paints")
 def add_paint(brand: str = Form(...), range: str = Form(""), code: str = Form(""), av_ref: str = Form(""),
-              name: str = Form(...), type: str = Form("Peinture acrylique"), usage: str = Form("")):
+              name: str = Form(...), type: str = Form("Peinture acrylique"), usage: str = Form(""), hex: str = Form("")):
     with closing(db()) as c:
-        c.execute("INSERT INTO paints(brand,range,code,av_ref,name,type,usage,updated) VALUES(?,?,?,?,?,?,?,?)",
-                  (brand.strip(), range.strip(), code.strip(), av_ref.strip(), name.strip(), type.strip(), usage.strip(), datetime.now().isoformat(timespec="seconds")))
+        c.execute("INSERT INTO paints(brand,range,code,av_ref,name,type,usage,hex,updated) VALUES(?,?,?,?,?,?,?,?,?)",
+                  (brand.strip(), range.strip(), code.strip(), av_ref.strip(), name.strip(), type.strip(), usage.strip(), hex if re.fullmatch(r"#[0-9a-fA-F]{6}", hex or "") else "", datetime.now().isoformat(timespec="seconds")))
         c.commit()
     return back("/")
 
@@ -133,10 +140,10 @@ def edit_paint_form(request: Request, pid: int):
 
 @app.post("/paints/{pid}/edit")
 def edit_paint(pid: int, brand: str = Form(...), range: str = Form(""), code: str = Form(""), av_ref: str = Form(""),
-               name: str = Form(...), type: str = Form(""), status: str = Form("en_stock"), usage: str = Form("")):
+               name: str = Form(...), type: str = Form(""), status: str = Form("en_stock"), usage: str = Form(""), hex: str = Form("")):
     with closing(db()) as c:
-        c.execute("UPDATE paints SET brand=?,range=?,code=?,av_ref=?,name=?,type=?,status=?,usage=?,updated=? WHERE id=?",
-                  (brand, range, code, av_ref, name, type, status if status in STATUTS else "en_stock", usage, datetime.now().isoformat(timespec="seconds"), pid))
+        c.execute("UPDATE paints SET brand=?,range=?,code=?,av_ref=?,name=?,type=?,status=?,usage=?,hex=?,updated=? WHERE id=?",
+                  (brand, range, code, av_ref, name, type, status if status in STATUTS else "en_stock", usage, hex if re.fullmatch(r"#[0-9a-fA-F]{6}", hex or "") else "", datetime.now().isoformat(timespec="seconds"), pid))
         c.commit()
     return back("/")
 
@@ -177,7 +184,7 @@ def load_project(c, pid):
     if not p: return None, [], []
     secs = []
     for s in c.execute("SELECT * FROM sections WHERE project_id=? ORDER BY pos, id", (pid,)):
-        sp = c.execute("""SELECT sp.id, sp.parts, pa.id AS paint_id, pa.brand, pa.code, pa.name, pa.status FROM section_paints sp
+        sp = c.execute("""SELECT sp.id, sp.parts, pa.id AS paint_id, pa.hex, pa.brand, pa.code, pa.name, pa.status FROM section_paints sp
                           JOIN paints pa ON pa.id=sp.paint_id WHERE sp.section_id=? ORDER BY sp.id""", (s["id"],)).fetchall()
         secs.append(dict(s=s, paints=sp))
     photos = c.execute("SELECT * FROM photos WHERE project_id=? ORDER BY id", (pid,)).fetchall()

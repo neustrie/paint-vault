@@ -6,7 +6,8 @@
   "av_ref": "073",
   "name": "Park Green",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#4f7a3a"
  },
  {
   "brand": "The Army Painter",
@@ -15,7 +16,8 @@
   "av_ref": "",
   "name": "Greenskin",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6fae3b"
  },
  {
   "brand": "Vallejo",
@@ -24,7 +26,8 @@
   "av_ref": "088",
   "name": "Gunship Green",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6f7a52"
  },
  {
   "brand": "Vallejo",
@@ -33,7 +36,8 @@
   "av_ref": "074",
   "name": "Intermediate Green / Verde Medio",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#7a8456"
  },
  {
   "brand": "Vallejo",
@@ -42,7 +46,8 @@
   "av_ref": "084",
   "name": "Uniform Green",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a6e44"
  },
  {
   "brand": "Vallejo",
@@ -51,7 +56,8 @@
   "av_ref": "094",
   "name": "Russian Uniform WWII (FS34127 - RLM83)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#5e6b4a"
  },
  {
   "brand": "Vallejo",
@@ -60,7 +66,8 @@
   "av_ref": "097",
   "name": "German Camouflage Dark Green (FS34052 - RAL6007)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#3f4a34"
  },
  {
   "brand": "Vallejo",
@@ -69,7 +76,8 @@
   "av_ref": "080",
   "name": "German Camouflage Bright Green (RAL6025)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6f8f4a"
  },
  {
   "brand": "Vallejo",
@@ -78,7 +86,8 @@
   "av_ref": "086",
   "name": "Luftwaffe Camouflage Green (FS34095 - RAL6020 - RLM71)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#5a6a42"
  },
  {
   "brand": "Vallejo",
@@ -87,7 +96,8 @@
   "av_ref": "096",
   "name": "Olive Brown / Oliva Parda (FS34084)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#5b5a38"
  },
  {
   "brand": "Vallejo",
@@ -96,7 +106,8 @@
   "av_ref": "096",
   "name": "US Dark Green / Verde Americano (FS34079)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#3f4a30"
  },
  {
   "brand": "Vallejo",
@@ -105,7 +116,8 @@
   "av_ref": "100",
   "name": "Black Green",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#232b24"
  },
  {
   "brand": "Vallejo",
@@ -114,7 +126,8 @@
   "av_ref": "083",
   "name": "Flat Green",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#4a6a38"
  },
  {
   "brand": "The Army Painter",
@@ -123,7 +136,8 @@
   "av_ref": "",
   "name": "Jungle Green",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#4a6a3a"
  },
  {
   "brand": "Vallejo",
@@ -132,7 +146,8 @@
   "av_ref": "079",
   "name": "Golden Olive",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#8a7a30"
  },
  {
   "brand": "Vallejo",
@@ -141,7 +156,8 @@
   "av_ref": "210",
   "name": "Fluorescent Green / Verde Fluorescente (FS38901)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#8be04a"
  },
  {
   "brand": "Vallejo",
@@ -150,7 +166,8 @@
   "av_ref": "",
   "name": "Emerald / Esmeralda",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#2fa070"
  },
  {
   "brand": "Vallejo",
@@ -159,7 +176,8 @@
   "av_ref": "115",
   "name": "Khaki / Caqui (FS30277)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#a89a6a"
  },
  {
   "brand": "Vallejo",
@@ -168,7 +186,8 @@
   "av_ref": "076",
   "name": "Green Sky",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#7fb0a0"
  },
  {
   "brand": "Vallejo",
@@ -177,7 +196,8 @@
   "av_ref": "079",
   "name": "Golden Olive",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#8a7a30"
  },
  {
   "brand": "Vallejo",
@@ -186,7 +206,8 @@
   "av_ref": "092",
   "name": "Olive Grey / Oliva Grey (FS34096 - RAL6006)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#7a806a"
  },
  {
   "brand": "Vallejo",
@@ -195,7 +216,8 @@
   "av_ref": "101",
   "name": "Green Grey (RLM02)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#707a6a"
  },
  {
   "brand": "The Army Painter",
@@ -204,7 +226,8 @@
   "av_ref": "",
   "name": "Strong Tone",
   "type": "Lavis / Wash",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a4a2a"
  },
  {
   "brand": "The Army Painter",
@@ -213,7 +236,8 @@
   "av_ref": "",
   "name": "Strong Tone",
   "type": "Lavis / Wash",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a4a2a"
  },
  {
   "brand": "The Army Painter",
@@ -222,7 +246,8 @@
   "av_ref": "",
   "name": "Dark Tone",
   "type": "Lavis / Wash",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#3a2a1c"
  },
  {
   "brand": "The Army Painter",
@@ -231,7 +256,8 @@
   "av_ref": "",
   "name": "Soft Tone",
   "type": "Lavis / Wash",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#a07a3a"
  },
  {
   "brand": "The Army Painter",
@@ -240,7 +266,8 @@
   "av_ref": "",
   "name": "Blue Tone",
   "type": "Lavis / Wash",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#3a4a6a"
  },
  {
   "brand": "The Army Painter",
@@ -249,7 +276,8 @@
   "av_ref": "",
   "name": "Green Tone",
   "type": "Lavis / Wash",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#3a5a3a"
  },
  {
   "brand": "The Army Painter",
@@ -258,7 +286,8 @@
   "av_ref": "",
   "name": "Dark Skin Wash",
   "type": "Lavis / Wash",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a3a2a"
  },
  {
   "brand": "The Army Painter",
@@ -267,7 +296,8 @@
   "av_ref": "",
   "name": "Strong Skin Wash",
   "type": "Lavis / Wash",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#7a4a2a"
  },
  {
   "brand": "The Army Painter",
@@ -276,7 +306,8 @@
   "av_ref": "",
   "name": "Soft Skin Wash",
   "type": "Lavis / Wash",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#a06a4a"
  },
  {
   "brand": "The Army Painter",
@@ -285,7 +316,8 @@
   "av_ref": "",
   "name": "Garnet Pigment Toner",
   "type": "Pigment Toner",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#7a1f2a"
  },
  {
   "brand": "The Army Painter",
@@ -294,7 +326,8 @@
   "av_ref": "",
   "name": "Obsidian Pigment Toner",
   "type": "Pigment Toner",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#1c1c20"
  },
  {
   "brand": "The Army Painter",
@@ -303,7 +336,8 @@
   "av_ref": "",
   "name": "Light Tone",
   "type": "Lavis / Wash",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#c8a85a"
  },
  {
   "brand": "Vallejo",
@@ -312,7 +346,8 @@
   "av_ref": "139",
   "name": "Mahogany Brown / Caoba (RAL8002)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a3a2a"
  },
  {
   "brand": "Vallejo",
@@ -322,7 +357,8 @@
   "name": "Flat Brown (FS30108 - RAL8011)",
   "type": "Peinture acrylique",
   "status": "en_stock",
-  "usage": "Crosses de fusils, manches d'outils, bois"
+  "usage": "Crosses de fusils, manches d'outils, bois",
+  "hex": "#5a3a24"
  },
  {
   "brand": "The Army Painter",
@@ -331,7 +367,8 @@
   "av_ref": "",
   "name": "Basilisk Brown",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a4a2a"
  },
  {
   "brand": "Vallejo",
@@ -340,7 +377,8 @@
   "av_ref": "021",
   "name": "Medium Orange / Naranja Medio",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#d07020"
  },
  {
   "brand": "The Army Painter",
@@ -349,7 +387,8 @@
   "av_ref": "",
   "name": "Leather Brown",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#7a4a2a"
  },
  {
   "brand": "Vallejo",
@@ -358,7 +397,8 @@
   "av_ref": "146",
   "name": "Hull Red (RAL8017)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a2f24"
  },
  {
   "brand": "Citadel",
@@ -367,7 +407,8 @@
   "av_ref": "",
   "name": "Mournfang Brown",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a3a24"
  },
  {
   "brand": "Vallejo",
@@ -376,7 +417,8 @@
   "av_ref": "145",
   "name": "German Camouflage Medium Brown (FS30097)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a4a30"
  },
  {
   "brand": "The Army Painter",
@@ -385,7 +427,8 @@
   "av_ref": "",
   "name": "Monster Brown",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a4a30"
  },
  {
   "brand": "Vallejo",
@@ -394,7 +437,8 @@
   "av_ref": "144",
   "name": "German Camouflage Pale Brown",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#a08a5a"
  },
  {
   "brand": "Vallejo",
@@ -403,7 +447,8 @@
   "av_ref": "",
   "name": "Khaki",
   "type": "Peinture pour aérographie",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#a89a6a"
  },
  {
   "brand": "Vallejo",
@@ -412,7 +457,8 @@
   "av_ref": "103",
   "name": "German Camouflage Beige Green",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#8a8a5a"
  },
  {
   "brand": "Vallejo",
@@ -421,7 +467,8 @@
   "av_ref": "008",
   "name": "Beige",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#b8a47a"
  },
  {
   "brand": "The Army Painter",
@@ -430,7 +477,8 @@
   "av_ref": "",
   "name": "Brainmatter Beige",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#d0b8a0"
  },
  {
   "brand": "Vallejo",
@@ -439,7 +487,8 @@
   "av_ref": "008",
   "name": "Beige",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#b8a47a"
  },
  {
   "brand": "The Army Painter",
@@ -448,7 +497,8 @@
   "av_ref": "",
   "name": "Matt White",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#f0f0ec"
  },
  {
   "brand": "Vallejo",
@@ -457,7 +507,8 @@
   "av_ref": "110",
   "name": "Deck Tan (FS36440)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#a89868"
  },
  {
   "brand": "The Army Painter",
@@ -466,7 +517,8 @@
   "av_ref": "",
   "name": "Burning Ore",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#d07030"
  },
  {
   "brand": "Vallejo",
@@ -475,7 +527,8 @@
   "av_ref": "015",
   "name": "Flat Yellow (RLM04)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#d8b830"
  },
  {
   "brand": "The Army Painter",
@@ -484,7 +537,8 @@
   "av_ref": "",
   "name": "Daemonic Yellow",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#e8c020"
  },
  {
   "brand": "Vallejo",
@@ -493,7 +547,8 @@
   "av_ref": "009",
   "name": "Sand Yellow / Amarillo Arena",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#c8a850"
  },
  {
   "brand": "Vallejo",
@@ -502,7 +557,8 @@
   "av_ref": "206",
   "name": "Fluorescent Yellow (RAL1026)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#d8e020"
  },
  {
   "brand": "Vallejo",
@@ -511,7 +567,8 @@
   "av_ref": "013",
   "name": "Ice Yellow / Amarillo Hielo",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#e8e0a0"
  },
  {
   "brand": "Vallejo",
@@ -520,7 +577,8 @@
   "av_ref": "034",
   "name": "Burnt Red (RAL8012)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#7a3020"
  },
  {
   "brand": "Vallejo",
@@ -529,7 +587,8 @@
   "av_ref": "036",
   "name": "Beige Red (FS31433 - RAL3012)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#c08070"
  },
  {
   "brand": "Vallejo",
@@ -538,7 +597,8 @@
   "av_ref": "037",
   "name": "Salmon Rose / Salmón",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#d08a7a"
  },
  {
   "brand": "Vallejo",
@@ -547,7 +607,8 @@
   "av_ref": "044",
   "name": "Purple",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a2a6a"
  },
  {
   "brand": "Vallejo",
@@ -556,7 +617,8 @@
   "av_ref": "046",
   "name": "Blue Violet / Violeta Azul",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#4a3a8a"
  },
  {
   "brand": "Vallejo",
@@ -565,7 +627,8 @@
   "av_ref": "046",
   "name": "Blue Violet / Violeta Azul",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#4a3a8a"
  },
  {
   "brand": "Vallejo",
@@ -574,7 +637,8 @@
   "av_ref": "043",
   "name": "Violet Red",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#9a2a5a"
  },
  {
   "brand": "Vallejo",
@@ -583,7 +647,8 @@
   "av_ref": "047",
   "name": "Violet",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#5a2a8a"
  },
  {
   "brand": "Vallejo",
@@ -592,7 +657,8 @@
   "av_ref": "044",
   "name": "Purple",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a2a6a"
  },
  {
   "brand": "Vallejo",
@@ -601,7 +667,8 @@
   "av_ref": "040",
   "name": "Pink / Rosa",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#e090b0"
  },
  {
   "brand": "Vallejo",
@@ -610,7 +677,8 @@
   "av_ref": "207",
   "name": "Fluorescent Orange (FS38903 - RAL2005)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#f06a10"
  },
  {
   "brand": "Vallejo",
@@ -619,7 +687,8 @@
   "av_ref": "208",
   "name": "Fluorescent Magenta",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#e0207a"
  },
  {
   "brand": "Vallejo",
@@ -628,7 +697,8 @@
   "av_ref": "031",
   "name": "Flat Red",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#b02020"
  },
  {
   "brand": "The Army Painter",
@@ -637,7 +707,8 @@
   "av_ref": "",
   "name": "Pure Red",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#c01818"
  },
  {
   "brand": "Citadel",
@@ -646,7 +717,8 @@
   "av_ref": "",
   "name": "Khorne Red",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#8a1818"
  },
  {
   "brand": "Vallejo",
@@ -655,7 +727,8 @@
   "av_ref": "030",
   "name": "Carmine Red",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#a01c2c"
  },
  {
   "brand": "Vallejo",
@@ -664,7 +737,8 @@
   "av_ref": "",
   "name": "Vermilion / Vermellon (FS31302 - RAL3020)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#c03020"
  },
  {
   "brand": "Vallejo",
@@ -673,7 +747,8 @@
   "av_ref": "",
   "name": "Dark Red / Rojo Oscuro",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#6a1420"
  },
  {
   "brand": "Vallejo",
@@ -682,7 +757,8 @@
   "av_ref": "",
   "name": "Basic Skintone / Carne Base",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#d09a7a"
  },
  {
   "brand": "Vallejo",
@@ -691,7 +767,8 @@
   "av_ref": "",
   "name": "Pale Flesh / Carne Pálida",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#e0b8a0"
  },
  {
   "brand": "Vallejo",
@@ -700,7 +777,8 @@
   "av_ref": "",
   "name": "Flat Flesh / Carne Mate",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#c08a6a"
  },
  {
   "brand": "Vallejo",
@@ -709,7 +787,8 @@
   "av_ref": "020",
   "name": "Sunny Skin Tone / Carne Dorada",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#d0a060"
  },
  {
   "brand": "Vallejo",
@@ -718,7 +797,8 @@
   "av_ref": "019",
   "name": "Dark Flesh / Carne Oscura",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#8a5a42"
  },
  {
   "brand": "Vallejo",
@@ -727,7 +807,8 @@
   "av_ref": "",
   "name": "Light Flesh / Carne Clara (FS31670)",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#e0b090"
  },
  {
   "brand": "The Army Painter",
@@ -736,7 +817,8 @@
   "av_ref": "",
   "name": "Centaur Skin",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#c8a080"
  },
  {
   "brand": "The Army Painter",
@@ -745,7 +827,8 @@
   "av_ref": "",
   "name": "Ruby Skin",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#a03a3a"
  },
  {
   "brand": "The Army Painter",
@@ -754,7 +837,8 @@
   "av_ref": "",
   "name": "Dorado Skin",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#c89a50"
  },
  {
   "brand": "The Army Painter",
@@ -763,7 +847,8 @@
   "av_ref": "",
   "name": "Topaz Skin",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#d0a040"
  },
  {
   "brand": "The Army Painter",
@@ -772,7 +857,8 @@
   "av_ref": "",
   "name": "Amber Skin",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#b87a30"
  },
  {
   "brand": "The Army Painter",
@@ -781,7 +867,8 @@
   "av_ref": "",
   "name": "Barbarian Flesh",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#c89070"
  },
  {
   "brand": "Vallejo",
@@ -790,7 +877,8 @@
   "av_ref": "",
   "name": "US Olive Drab / US Verde Oliva",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#4a4a30"
  },
  {
   "brand": "Vallejo",
@@ -800,7 +888,8 @@
   "name": "German Camouflage Black Brown / Camuflaje Pardo Negro",
   "type": "Peinture acrylique",
   "status": "a_commander",
-  "usage": "Cuirs sombres, cartouchières (Rempl. 70.872)"
+  "usage": "Cuirs sombres, cartouchières (Rempl. 70.872)",
+  "hex": "#3a2a1c"
  },
  {
   "brand": "Vallejo",
@@ -809,7 +898,8 @@
   "av_ref": "",
   "name": "Green Ochre / Ocre Verde",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#7a7a40"
  },
  {
   "brand": "Vallejo",
@@ -818,7 +908,8 @@
   "av_ref": "",
   "name": "Cork Brown / Marrón Corcho",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#8a6a40"
  },
  {
   "brand": "AK Interactive",
@@ -827,7 +918,8 @@
   "av_ref": "",
   "name": "Tan",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#b09870"
  },
  {
   "brand": "Vallejo",
@@ -836,7 +928,8 @@
   "av_ref": "",
   "name": "Flat Brown / Marrón Mate",
   "type": "Peinture acrylique",
-  "status": "en_stock"
+  "status": "en_stock",
+  "hex": "#5a3a24"
  },
  {
   "brand": "Vallejo",
@@ -846,7 +939,8 @@
   "name": "German Fieldgrey",
   "type": "Peinture acrylique",
   "status": "en_stock",
-  "usage": "Veste M36, casquette (Feldmütze)"
+  "usage": "Veste M36, casquette (Feldmütze)",
+  "hex": "#5f6a52"
  },
  {
   "brand": "Vallejo",
@@ -856,7 +950,8 @@
   "name": "Basalt Grey",
   "type": "Peinture acrylique",
   "status": "en_stock",
-  "usage": "Pantalon M36 (Steingrau)"
+  "usage": "Pantalon M36 (Steingrau)",
+  "hex": "#6a6e6a"
  },
  {
   "brand": "Vallejo",
@@ -866,7 +961,8 @@
   "name": "German Grey",
   "type": "Peinture acrylique",
   "status": "en_stock",
-  "usage": "Casques, équipement, retouches TS-4"
+  "usage": "Casques, équipement, retouches TS-4",
+  "hex": "#3c3e40"
  },
  {
   "brand": "Vallejo",
@@ -876,7 +972,8 @@
   "name": "Pale Sand",
   "type": "Peinture acrylique",
   "status": "en_stock",
-  "usage": "Éclaircissements universels (visages, uniformes)"
+  "usage": "Éclaircissements universels (visages, uniformes)",
+  "hex": "#c8b890"
  },
  {
   "brand": "Vallejo",
@@ -886,7 +983,8 @@
   "name": "German Camo Orange Ochre",
   "type": "Peinture acrylique",
   "status": "a_commander",
-  "usage": "Camouflage blindés français, toiles"
+  "usage": "Camouflage blindés français, toiles",
+  "hex": "#b8803a"
  },
  {
   "brand": "Tamiya",
@@ -896,7 +994,8 @@
   "name": "German Grey (Spray)",
   "type": "Spray",
   "status": "en_stock",
-  "usage": "Sous-couche véhicules allemands"
+  "usage": "Sous-couche véhicules allemands",
+  "hex": "#3c3e40"
  },
  {
   "brand": "Tamiya",
@@ -906,6 +1005,7 @@
   "name": "Olive Drab 2 (Spray)",
   "type": "Spray",
   "status": "en_stock",
-  "usage": "Sous-couche véhicules français"
+  "usage": "Sous-couche véhicules français",
+  "hex": "#4a4a2a"
  }
 ]

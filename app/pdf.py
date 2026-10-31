@@ -29,7 +29,8 @@ def render_project_pdf(p, secs, statuts):
             ref = f"{sp['brand']} {sp['code']}".strip()
             part = f"{sp['parts']} part(s) · " if mix and sp["parts"] else ""
             warn = "  [À RACHETER]" if sp["status"] != "en_stock" else ""
-            lines.append(f"{E(part)}<b>{E(sp['name'])}</b> ({E(ref)}){warn}")
+            sw = f'<font color="{sp["hex"]}">■■</font> ' if sp["hex"] else ""
+            lines.append(f"{sw}{E(part)}<b>{E(sp['name'])}</b> ({E(ref)}){warn}")
         if mix: lines.insert(0, "<i>Mélange :</i>")
         if sec["note"]: lines.append(f"<i>{E(sec['note'])}</i>")
         rows.append([Paragraph(E(sec["name"]), bold), Paragraph(E(sec["technique"]), cell),
