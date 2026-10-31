@@ -7,6 +7,7 @@ from fastapi.responses import RedirectResponse, Response, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import json
+from urllib.parse import quote
 
 BASE = Path(__file__).parent
 DATA = Path(os.environ.get("DATA_DIR", "/data"))
@@ -194,9 +195,10 @@ def load_project(c, pid):
 def project(request: Request, pid: int):
     with closing(db()) as c:
         p, secs, photos = load_project(c, pid)
-        allp = c.execute("SELECT id, brand, code, name FROM paints ORDER BY brand, code, name").fetchall()
+        allp = c.execute("SELECT id, brand, code, name FROM paints ORDER BY code, name").fetchall()
     if not p: return back("/projets")
-    return templates.TemplateResponse(request, "project.html", dict(p=p, secs=secs, photos=photos, allp=allp, page="proj"))
+    labels = list(dict.fromkeys(paint_label(a) for a in allp))
+    return templates.TemplateResponse(request, "project.html", dict(p=p, secs=secs, photos=photos, labels=labels, err=request.query_params.get("err", ""), page="proj"))
 
 @app.post("/projets/{pid}/edit")
 def edit_project(pid: int, name: str = Form(...), game: str = Form(""), scale: str = Form(""), faction: str = Form(""), notes: str = Form("")):
@@ -226,13 +228,24 @@ def delete_section(sid: int):
         c.execute("DELETE FROM sections WHERE id=?", (sid,)); c.commit()
     return back(f"/projets/{r[0]}" if r else "/projets")
 
+def paint_label(p):
+    return f"{p['code']} — {p['name']} ({p['brand']})" if p["code"] else f"{p['name']} ({p['brand']})"
+
 @app.post("/sections/{sid}/paints")
-def add_section_paint(sid: int, paint_id: int = Form(...), parts: str = Form("")):
+def add_section_paint(sid: int, q: str = Form(""), parts: str = Form("")):
+    q = q.strip()
     with closing(db()) as c:
         r = c.execute("SELECT project_id FROM sections WHERE id=?", (sid,)).fetchone()
-        if r:
-            c.execute("INSERT INTO section_paints(section_id,paint_id,parts) VALUES(?,?,?)", (sid, paint_id, int(parts) if parts.strip().isdigit() else None)); c.commit()
-    return back(f"/projets/{r[0]}" if r else "/projets")
+        if not r: return back("/projets")
+        paints = c.execute("SELECT id, brand, code, name FROM paints").fetchall()
+        exact = [p for p in paints if paint_label(p).lower() == q.lower()]
+        found = exact or [p for p in paints if q and q.lower() in paint_label(p).lower()]
+        ids = {p["id"] for p in found} if len({paint_label(p) for p in found}) > 1 else set(p["id"] for p in found[:1])
+        if len(ids) != 1:
+            msg = "Aucune peinture ne correspond à" if not found else "Plusieurs peintures correspondent à"
+            return back(f"/projets/{r[0]}?err=" + quote(f"{msg} « {q} » : choisis une proposition de la liste."))
+        c.execute("INSERT INTO section_paints(section_id,paint_id,parts) VALUES(?,?,?)", (sid, ids.pop(), int(parts) if parts.strip().isdigit() else None)); c.commit()
+    return back(f"/projets/{r[0]}")
 
 @app.post("/section_paints/{spid}/delete")
 def delete_section_paint(spid: int):

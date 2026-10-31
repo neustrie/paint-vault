@@ -1,4 +1,6 @@
 {% extends "base.html" %}{% block body %}
+{% if err %}<div class="card" style="border-color:var(--warn);color:var(--warn)">{{err}}</div>{% endif %}
+<datalist id="paints-list">{% for l in labels %}<option value="{{l}}">{% endfor %}</datalist>
 <h1>{{p.name}}</h1>
 <p class="mut">{{p.game}} {{p.scale}} · {{p.faction}}</p>{% if p.notes %}<p>{{p.notes}}</p>{% endif %}
 <p><a class="btn" href="/projets/{{p.id}}/pdf" target="_blank">PDF A4 (plan de travail)</a>
@@ -12,7 +14,7 @@
  {% if sp.status!='en_stock' %}<span class="badge s-{{sp.status}}">{{STATUTS[sp.status]}}</span>{% endif %}
  <form class="inline" method="post" action="/section_paints/{{sp.id}}/delete"><button class="sec">×</button></form></li>{% endfor %}</ul>
  <form class="row" method="post" action="/sections/{{s.id}}/paints" style="margin:0">
-  <label>Peinture<select name="paint_id">{% for a in allp %}<option value="{{a.id}}">{{a.brand}} {{a.code}} — {{a.name}}</option>{% endfor %}</select></label>
+  <label>Peinture (tape un code ou un nom)<input name="q" list="paints-list" autocomplete="off" required placeholder="70.83, Amber…" style="min-width:min(100%,360px)"></label>
   <label>Parts (mélange)<input name="parts" size="3" inputmode="numeric"></label><button class="sec">Ajouter</button></form>
 </div>{% endfor %}
 <h2>Ajouter un élément</h2>
