@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block body %}
+<h1>Liste de courses <span class="mut">({{paints|length}})</span></h1>
+<p class="mut">Pots vides et peintures à commander. « Reçu » remet la peinture en stock.</p>
+<table><tr><th>Marque</th><th>Code</th><th>Nom</th><th>Statut</th><th></th></tr>
+{% for p in paints %}<tr><td>{{p.brand}}<br><span class="mut">{{p.range}}</span></td><td>{{p.code}}</td><td>{{p.name}}</td>
+<td><span class="badge s-{{p.status}}">{{STATUTS[p.status]}}</span></td><td>
+{% if p.status!='commande' %}<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="commande"><input type="hidden" name="next" value="/courses"><button class="sec">Commandé</button></form>{% endif %}
+<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="en_stock"><input type="hidden" name="next" value="/courses"><button>Reçu</button></form></td></tr>
+{% else %}<tr><td colspan="5" class="mut">Rien à acheter.</td></tr>{% endfor %}</table>
+<h2>Marquer « à commander » une peinture en stock</h2><p class="mut">Depuis la fiche d'une peinture (inventaire → clic sur le nom → statut).</p>
+{% endblock %}

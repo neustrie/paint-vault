@@ -1,0 +1,911 @@
+[
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.969",
+  "av_ref": "073",
+  "name": "Park Green",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Greenskin",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.895",
+  "av_ref": "088",
+  "name": "Gunship Green",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color (Panzer Series)",
+  "code": "70.891",
+  "av_ref": "074",
+  "name": "Intermediate Green / Verde Medio",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color (Panzer Series)",
+  "code": "70.922",
+  "av_ref": "084",
+  "name": "Uniform Green",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.924",
+  "av_ref": "094",
+  "name": "Russian Uniform WWII (FS34127 - RLM83)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color (Panzer Series)",
+  "code": "70.979",
+  "av_ref": "097",
+  "name": "German Camouflage Dark Green (FS34052 - RAL6007)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.833",
+  "av_ref": "080",
+  "name": "German Camouflage Bright Green (RAL6025)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color (Panzer Series)",
+  "code": "70.823",
+  "av_ref": "086",
+  "name": "Luftwaffe Camouflage Green (FS34095 - RAL6020 - RLM71)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.889",
+  "av_ref": "096",
+  "name": "Olive Brown / Oliva Parda (FS34084)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.893",
+  "av_ref": "096",
+  "name": "US Dark Green / Verde Americano (FS34079)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.980",
+  "av_ref": "100",
+  "name": "Black Green",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.968",
+  "av_ref": "083",
+  "name": "Flat Green",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Jungle Green",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.857",
+  "av_ref": "079",
+  "name": "Golden Olive",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.737",
+  "av_ref": "210",
+  "name": "Fluorescent Green / Verde Fluorescente (FS38901)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.838",
+  "av_ref": "",
+  "name": "Emerald / Esmeralda",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.988",
+  "av_ref": "115",
+  "name": "Khaki / Caqui (FS30277)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.974",
+  "av_ref": "076",
+  "name": "Green Sky",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.857",
+  "av_ref": "079",
+  "name": "Golden Olive",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.888",
+  "av_ref": "092",
+  "name": "Olive Grey / Oliva Grey (FS34096 - RAL6006)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.886",
+  "av_ref": "101",
+  "name": "Green Grey (RLM02)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Quickshade Washes",
+  "code": "",
+  "av_ref": "",
+  "name": "Strong Tone",
+  "type": "Lavis / Wash",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Quickshade Washes",
+  "code": "",
+  "av_ref": "",
+  "name": "Strong Tone",
+  "type": "Lavis / Wash",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Quickshade Washes",
+  "code": "",
+  "av_ref": "",
+  "name": "Dark Tone",
+  "type": "Lavis / Wash",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Quickshade Washes",
+  "code": "",
+  "av_ref": "",
+  "name": "Soft Tone",
+  "type": "Lavis / Wash",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Quickshade Washes",
+  "code": "",
+  "av_ref": "",
+  "name": "Blue Tone",
+  "type": "Lavis / Wash",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Quickshade Washes",
+  "code": "",
+  "av_ref": "",
+  "name": "Green Tone",
+  "type": "Lavis / Wash",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Quickshade Washes",
+  "code": "",
+  "av_ref": "",
+  "name": "Dark Skin Wash",
+  "type": "Lavis / Wash",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Quickshade Washes",
+  "code": "",
+  "av_ref": "",
+  "name": "Strong Skin Wash",
+  "type": "Lavis / Wash",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Quickshade Washes",
+  "code": "",
+  "av_ref": "",
+  "name": "Soft Skin Wash",
+  "type": "Lavis / Wash",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Garnet Pigment Toner",
+  "type": "Pigment Toner",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Obsidian Pigment Toner",
+  "type": "Pigment Toner",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Quickshade Washes",
+  "code": "",
+  "av_ref": "",
+  "name": "Light Tone",
+  "type": "Lavis / Wash",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.846",
+  "av_ref": "139",
+  "name": "Mahogany Brown / Caoba (RAL8002)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.984",
+  "av_ref": "140",
+  "name": "Flat Brown (FS30108 - RAL8011)",
+  "type": "Peinture acrylique",
+  "status": "en_stock",
+  "usage": "Crosses de fusils, manches d'outils, bois"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Basilisk Brown",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.860",
+  "av_ref": "021",
+  "name": "Medium Orange / Naranja Medio",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Leather Brown",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color (Panzer Series)",
+  "code": "70.985",
+  "av_ref": "146",
+  "name": "Hull Red (RAL8017)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Citadel",
+  "range": "Base",
+  "code": "",
+  "av_ref": "",
+  "name": "Mournfang Brown",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.826",
+  "av_ref": "145",
+  "name": "German Camouflage Medium Brown (FS30097)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Monster Brown",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color (Panzer Series)",
+  "code": "70.825",
+  "av_ref": "144",
+  "name": "German Camouflage Pale Brown",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Game Air",
+  "code": "72.761",
+  "av_ref": "",
+  "name": "Khaki",
+  "type": "Peinture pour aérographie",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.821",
+  "av_ref": "103",
+  "name": "German Camouflage Beige Green",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.917",
+  "av_ref": "008",
+  "name": "Beige",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Brainmatter Beige",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.917",
+  "av_ref": "008",
+  "name": "Beige",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Matt White",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.986",
+  "av_ref": "110",
+  "name": "Deck Tan (FS36440)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints Fanatic",
+  "code": "",
+  "av_ref": "",
+  "name": "Burning Ore",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.953",
+  "av_ref": "015",
+  "name": "Flat Yellow (RLM04)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Daemonic Yellow",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.916",
+  "av_ref": "009",
+  "name": "Sand Yellow / Amarillo Arena",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.730",
+  "av_ref": "206",
+  "name": "Fluorescent Yellow (RAL1026)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.858",
+  "av_ref": "013",
+  "name": "Ice Yellow / Amarillo Hielo",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.814",
+  "av_ref": "034",
+  "name": "Burnt Red (RAL8012)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.804",
+  "av_ref": "036",
+  "name": "Beige Red (FS31433 - RAL3012)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.835",
+  "av_ref": "037",
+  "name": "Salmon Rose / Salmón",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.959",
+  "av_ref": "044",
+  "name": "Purple",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.811",
+  "av_ref": "046",
+  "name": "Blue Violet / Violeta Azul",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.811",
+  "av_ref": "046",
+  "name": "Blue Violet / Violeta Azul",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.812",
+  "av_ref": "043",
+  "name": "Violet Red",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.960",
+  "av_ref": "047",
+  "name": "Violet",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.959",
+  "av_ref": "044",
+  "name": "Purple",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.958",
+  "av_ref": "040",
+  "name": "Pink / Rosa",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.733",
+  "av_ref": "207",
+  "name": "Fluorescent Orange (FS38903 - RAL2005)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.735",
+  "av_ref": "208",
+  "name": "Fluorescent Magenta",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.957",
+  "av_ref": "031",
+  "name": "Flat Red",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Pure Red",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Citadel",
+  "range": "Base",
+  "code": "",
+  "av_ref": "",
+  "name": "Khorne Red",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.908",
+  "av_ref": "030",
+  "name": "Carmine Red",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.909",
+  "av_ref": "",
+  "name": "Vermilion / Vermellon (FS31302 - RAL3020)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.946",
+  "av_ref": "",
+  "name": "Dark Red / Rojo Oscuro",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.815",
+  "av_ref": "",
+  "name": "Basic Skintone / Carne Base",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Game Color",
+  "code": "72.003",
+  "av_ref": "",
+  "name": "Pale Flesh / Carne Pálida",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color (Panzer Series)",
+  "code": "70.955",
+  "av_ref": "",
+  "name": "Flat Flesh / Carne Mate",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.845",
+  "av_ref": "020",
+  "name": "Sunny Skin Tone / Carne Dorada",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.927",
+  "av_ref": "019",
+  "name": "Dark Flesh / Carne Oscura",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.928",
+  "av_ref": "",
+  "name": "Light Flesh / Carne Clara (FS31670)",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Centaur Skin",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Ruby Skin",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Dorado Skin",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Topaz Skin",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints",
+  "code": "",
+  "av_ref": "",
+  "name": "Amber Skin",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "The Army Painter",
+  "range": "Warpaints Fanatic",
+  "code": "",
+  "av_ref": "",
+  "name": "Barbarian Flesh",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.887",
+  "av_ref": "",
+  "name": "US Olive Drab / US Verde Oliva",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.822",
+  "av_ref": "",
+  "name": "German Camouflage Black Brown / Camuflaje Pardo Negro",
+  "type": "Peinture acrylique",
+  "status": "a_commander",
+  "usage": "Cuirs sombres, cartouchières (Rempl. 70.872)"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.914",
+  "av_ref": "",
+  "name": "Green Ochre / Ocre Verde",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.843",
+  "av_ref": "",
+  "name": "Cork Brown / Marrón Corcho",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "AK Interactive",
+  "range": "3rd Gen Acrylics",
+  "code": "AK11116",
+  "av_ref": "",
+  "name": "Tan",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.984",
+  "av_ref": "",
+  "name": "Flat Brown / Marrón Mate",
+  "type": "Peinture acrylique",
+  "status": "en_stock"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.830",
+  "av_ref": "",
+  "name": "German Fieldgrey",
+  "type": "Peinture acrylique",
+  "status": "en_stock",
+  "usage": "Veste M36, casquette (Feldmütze)"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.867",
+  "av_ref": "",
+  "name": "Basalt Grey",
+  "type": "Peinture acrylique",
+  "status": "en_stock",
+  "usage": "Pantalon M36 (Steingrau)"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.995",
+  "av_ref": "",
+  "name": "German Grey",
+  "type": "Peinture acrylique",
+  "status": "en_stock",
+  "usage": "Casques, équipement, retouches TS-4"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.837",
+  "av_ref": "",
+  "name": "Pale Sand",
+  "type": "Peinture acrylique",
+  "status": "en_stock",
+  "usage": "Éclaircissements universels (visages, uniformes)"
+ },
+ {
+  "brand": "Vallejo",
+  "range": "Model Color",
+  "code": "70.824",
+  "av_ref": "",
+  "name": "German Camo Orange Ochre",
+  "type": "Peinture acrylique",
+  "status": "a_commander",
+  "usage": "Camouflage blindés français, toiles"
+ },
+ {
+  "brand": "Tamiya",
+  "range": "Spray",
+  "code": "TS-4",
+  "av_ref": "",
+  "name": "German Grey (Spray)",
+  "type": "Spray",
+  "status": "en_stock",
+  "usage": "Sous-couche véhicules allemands"
+ },
+ {
+  "brand": "Tamiya",
+  "range": "Spray",
+  "code": "TS-28",
+  "av_ref": "",
+  "name": "Olive Drab 2 (Spray)",
+  "type": "Spray",
+  "status": "en_stock",
+  "usage": "Sous-couche véhicules français"
+ }
+]

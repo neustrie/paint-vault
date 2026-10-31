@@ -1,0 +1,29 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paint Vault</title>
+<style>
+:root{--bg:#f6f6f4;--fg:#1d1d1b;--mut:#6b6b66;--card:#fff;--bd:#d9d9d3;--ac:#2b5d8a;--warn:#b3541e;--ok:#2f7d4f}
+@media(prefers-color-scheme:dark){:root{--bg:#171715;--fg:#ececE6;--mut:#a0a09a;--card:#222220;--bd:#3a3a36;--ac:#6aa5d6;--warn:#e08a55;--ok:#6cc08a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.4 system-ui,sans-serif}
+nav{display:flex;gap:4px;padding:8px 16px;background:var(--card);border-bottom:1px solid var(--bd);position:sticky;top:0;flex-wrap:wrap;align-items:center}
+nav b{margin-right:12px}nav a{padding:6px 12px;border-radius:6px;color:var(--fg);text-decoration:none}nav a.on{background:var(--ac);color:#fff}
+main{max-width:1100px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.2em 0 .6em}h2{font-size:1.1em;margin:1.2em 0 .4em}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:12px;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--bd)}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--bd);vertical-align:top}th{font-size:.85em;color:var(--mut)}
+input,select,textarea,button{font:inherit;padding:6px 8px;border:1px solid var(--bd);border-radius:6px;background:var(--card);color:var(--fg)}
+button,.btn{cursor:pointer;background:var(--ac);color:#fff;border:0;text-decoration:none;display:inline-block;padding:6px 10px;border-radius:6px}
+button.sec{background:var(--card);color:var(--fg);border:1px solid var(--bd)}button.dng{background:var(--warn)}
+form.inline{display:inline}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:end;margin-bottom:8px}
+.badge{font-size:.8em;padding:2px 8px;border-radius:10px;border:1px solid var(--bd)}
+.s-vide,.s-a_commander{color:var(--warn);border-color:var(--warn)}.s-en_stock{color:var(--ok);border-color:var(--ok)}.s-commande{color:var(--ac);border-color:var(--ac)}
+.mut{color:var(--mut)}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.grid img{width:100%;height:160px;object-fit:cover;border-radius:6px}label{display:flex;flex-direction:column;font-size:.85em;color:var(--mut);gap:2px}
+@media(max-width:700px){.hide-m{display:none}}
+</style></head><body>
+<nav><b>🎨 Paint Vault</b>
+<a href="/" class="{{'on' if page=='inv'}}">Inventaire</a>
+<a href="/courses" class="{{'on' if page=='courses'}}">Liste de courses</a>
+<a href="/projets" class="{{'on' if page=='proj'}}">Projets</a>
+<a href="/export.csv" style="margin-left:auto">Export CSV</a></nav>
+<main>{% block body %}{% endblock %}</main></body></html>

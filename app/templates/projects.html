@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block body %}
+<h1>Projets</h1>
+<div class="grid">{% for p in projs %}<a class="card" href="/projets/{{p.id}}" style="text-decoration:none;color:inherit">
+{% if p.cover %}<img src="/photos/{{p.cover}}" alt="">{% endif %}<b>{{p.name}}</b><br><span class="mut">{{p.game}} {{p.scale}}<br>{{p.faction}} · {{p.nsec}} éléments</span></a>
+{% else %}<p class="mut">Aucun projet.</p>{% endfor %}</div>
+<h2>Nouveau projet</h2>
+<form class="card row" method="post" action="/projets">
+ <label>Nom<input name="name" required placeholder="Infanterie allemande 1940"></label>
+ <label>Jeu<input name="game" placeholder="Bolt Action"></label><label>Échelle<input name="scale" placeholder="1/56 (28mm)"></label>
+ <label>Faction<input name="faction" placeholder="Heer 1940"></label><button>Créer</button></form>
+{% endblock %}
