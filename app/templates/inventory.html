@@ -1,25 +1,45 @@
 {% extends "base.html" %}{% block body %}
-<h1>Inventaire <span class="mut">({{ paints|length }} affichées)</span></h1>
-<p class="mut">{% for k,v in STATUTS.items() %}{{ v }} : <b>{{ counts.get(k,0) }}</b>{{ ' · ' if not loop.last }}{% endfor %}</p>
-<form class="row" method="get">
- <label>Recherche<input name="q" value="{{q}}" placeholder="code, nom, usage"></label>
+{% set qs = {'q':q,'brand':brand,'type':type,'status':status} %}
+<h1>Inventaire <span class="mut" style="font-size:.55em;font-weight:500">{{ paints|length }} peinture{{ 's' if paints|length>1 }}</span></h1>
+<div class="stats">
+ {% for k,v in STATUTS.items() %}<a class="stat {{'on' if status==k}}" href="/?status={{k}}&vue={{vue}}"><b>{{ counts.get(k,0) }}</b><span>{{v}}</span></a>{% endfor %}
+</div>
+<form class="filters row" method="get">
+ <input type="hidden" name="vue" value="{{vue}}">
+ <label style="flex:1;min-width:180px">Recherche<input name="q" value="{{q}}" placeholder="code, nom, usage…"></label>
  <label>Marque<select name="brand"><option value="">Toutes</option>{% for b in brands %}<option {{'selected' if b==brand}}>{{b}}</option>{% endfor %}</select></label>
  <label>Type<select name="type"><option value="">Tous</option>{% for t in types %}<option {{'selected' if t==type}}>{{t}}</option>{% endfor %}</select></label>
  <label>Statut<select name="status"><option value="">Tous</option>{% for k,v in STATUTS.items() %}<option value="{{k}}" {{'selected' if k==status}}>{{v}}</option>{% endfor %}</select></label>
- <button>Filtrer</button> <a class="btn sec" style="background:var(--card);color:var(--fg);border:1px solid var(--bd)" href="/">Réinitialiser</a>
+ <button>Filtrer</button><a class="btn sec" href="/?vue={{vue}}">Réinitialiser</a>
+ <span class="seg" style="margin-left:auto"><a class="{{'on' if vue=='cartes'}}" href="/?q={{q}}&brand={{brand}}&type={{type}}&status={{status}}&vue=cartes">Cartes</a><a class="{{'on' if vue!='cartes'}}" href="/?q={{q}}&brand={{brand}}&type={{type}}&status={{status}}&vue=tableau">Tableau</a></span>
 </form>
-<table><tr><th>Marque / gamme</th><th>Code</th><th>Nom</th><th class="hide-m">Type</th><th>Statut</th><th></th></tr>
+{% set back = request.url.path ~ '?' ~ request.url.query %}
+{% if vue=='cartes' %}
+<div class="grid">{% for p in paints %}
+ <div class="pcard"><div class="band" style="background-color:{{p.hex or 'var(--bd)'}}"></div>
+  <div class="bd"><a class="nm" href="/paints/{{p.id}}">{{p.name}}</a>
+   <span class="mut small">{{p.brand}} · {{p.range}}</span><span class="small"><b>{{p.code}}</b>{% if p.av_ref %} <span class="mut">AV {{p.av_ref}}</span>{% endif %}</span>
+   {% if p.usage %}<span class="mut small">{{p.usage}}</span>{% endif %}
+   <div class="ft"><span class="badge s-{{p.status}}">{{STATUTS[p.status]}}</span>
+   {% if p.status=='en_stock' %}<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="vide"><input type="hidden" name="next" value="{{back}}"><button class="dng sm">Pot vide</button></form>
+   {% else %}<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="en_stock"><input type="hidden" name="next" value="{{back}}"><button class="sm">Reçu</button></form>{% endif %}</div>
+  </div></div>
+{% else %}<p class="empty" style="grid-column:1/-1">Aucun résultat.</p>{% endfor %}</div>
+{% else %}
+<table><tr><th>Peinture</th><th>Code</th><th class="hide-m">Marque / gamme</th><th class="hide-m">Type</th><th>Statut</th><th></th></tr>
 {% for p in paints %}<tr>
-<td>{{p.brand}}<br><span class="mut">{{p.range}}</span></td><td>{{p.code}}{% if p.av_ref %}<br><span class="mut">AV {{p.av_ref}}</span>{% endif %}</td>
-<td><span class="sw" style="background:{{p.hex or 'transparent'}}" title="{{p.hex or 'pas de couleur'}}"></span><a href="/paints/{{p.id}}">{{p.name}}</a>{% if p.usage %}<br><span class="mut">{{p.usage}}</span>{% endif %}</td>
-<td class="hide-m">{{p.type}}</td><td><span class="badge s-{{p.status}}">{{STATUTS[p.status]}}</span></td>
-<td>{% if p.status=='en_stock' %}<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="vide"><input type="hidden" name="next" value="{{ request.url.path }}?{{ request.url.query }}"><button class="dng">Pot vide</button></form>
-{% else %}<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="en_stock"><input type="hidden" name="next" value="{{ request.url.path }}?{{ request.url.query }}"><button class="sec">Reçu</button></form>{% endif %}</td></tr>
-{% else %}<tr><td colspan="6" class="mut">Aucun résultat.</td></tr>{% endfor %}</table>
+<td><div style="display:flex;align-items:center"><span class="sw" style="background:{{p.hex or 'transparent'}}" title="{{p.hex or 'pas de couleur'}}"></span><div><a href="/paints/{{p.id}}" style="font-weight:600;text-decoration:none;color:var(--fg)">{{p.name}}</a>{% if p.usage %}<br><span class="mut small">{{p.usage}}</span>{% endif %}</div></div></td>
+<td><b>{{p.code}}</b>{% if p.av_ref %}<br><span class="mut small">AV {{p.av_ref}}</span>{% endif %}</td>
+<td class="hide-m">{{p.brand}}<br><span class="mut small">{{p.range}}</span></td><td class="hide-m small">{{p.type}}</td>
+<td><span class="badge s-{{p.status}}">{{STATUTS[p.status]}}</span></td>
+<td style="text-align:right">{% if p.status=='en_stock' %}<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="vide"><input type="hidden" name="next" value="{{back}}"><button class="dng sm">Pot vide</button></form>
+{% else %}<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="en_stock"><input type="hidden" name="next" value="{{back}}"><button class="sm">Reçu</button></form>{% endif %}</td></tr>
+{% else %}<tr><td colspan="6" class="empty">Aucun résultat.</td></tr>{% endfor %}</table>
+{% endif %}
 <h2>Ajouter une peinture</h2>
 <form class="card row" method="post" action="/paints">
  <label>Marque<input name="brand" required list="bl"></label><datalist id="bl">{% for b in brands %}<option>{{b}}</option>{% endfor %}</datalist>
- <label>Gamme<input name="range"></label><label>Code<input name="code"></label><label>Réf. AV<input name="av_ref" size="5"></label>
+ <label>Gamme<input name="range"></label><label>Code<input name="code" size="9"></label><label>Réf. AV<input name="av_ref" size="5"></label>
  <label>Nom<input name="name" required></label>
  <label>Type<input name="type" value="Peinture acrylique" list="tl"></label><datalist id="tl">{% for t in types %}<option>{{t}}</option>{% endfor %}</datalist>
  <label>Couleur<input type="color" name="hex" value="#808080"></label><label>Usage<input name="usage"></label><button>Ajouter</button></form>

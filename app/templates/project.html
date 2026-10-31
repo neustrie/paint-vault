@@ -1,35 +1,42 @@
 {% extends "base.html" %}{% block body %}
-{% if err %}<div class="card" style="border-color:var(--warn);color:var(--warn)">{{err}}</div>{% endif %}
+{% if err %}<div class="card alert">{{err}}</div>{% endif %}
 <datalist id="paints-list">{% for l in labels %}<option value="{{l}}">{% endfor %}</datalist>
-<h1>{{p.name}}</h1>
-<p class="mut">{{p.game}} {{p.scale}} · {{p.faction}}</p>{% if p.notes %}<p>{{p.notes}}</p>{% endif %}
-<p><a class="btn" href="/projets/{{p.id}}/pdf" target="_blank">PDF A4 (plan de travail)</a>
- <a href="/projets">← Projets</a></p>
+<p class="small" style="margin:0 0 4px"><a href="/projets">← Projets</a></p>
+<div class="sec-h" style="align-items:flex-start;flex-wrap:wrap">
+ <div><h1 style="margin-bottom:.1em">{{p.name}}</h1>
+ <div class="mut">{{p.game}} {{p.scale}}{% if p.faction %} · {{p.faction}}{% endif %}</div>
+ {% if p.notes %}<p style="margin:.6em 0 0">{{p.notes}}</p>{% endif %}</div>
+ <a class="btn" href="/projets/{{p.id}}/pdf" target="_blank">📄 PDF A4 · plan de travail</a>
+</div>
+<div style="height:14px"></div>
 {% for x in secs %}{% set s=x.s %}<div class="card">
- <div class="row" style="justify-content:space-between;margin:0"><b>{{s.name}}</b>
- <form class="inline" method="post" action="/sections/{{s.id}}/delete"><button class="sec">Supprimer l'élément</button></form></div>
- {% if s.note %}<div class="mut">{{s.note}}</div>{% endif %}
- <ul>{% for sp in x.paints %}<li>{% if sp.detail %}<b>{{sp.detail}}</b> : {% endif %}<span class="sw sw-s" style="background:{{sp.hex or 'transparent'}}"></span><b>{{sp.name}}</b> <span class="mut">{{sp.brand}} {{sp.code}}</span> <span class="badge">{{sp.technique}}</span>
- {% if sp.status!='en_stock' %}<span class="badge s-{{sp.status}}">{{STATUTS[sp.status]}}</span>{% endif %}
- <form class="inline" method="post" action="/section_paints/{{sp.id}}/delete"><button class="sec">×</button></form></li>{% endfor %}</ul>
- <form class="row" method="post" action="/sections/{{s.id}}/paints" style="margin:0">
-  <label>Peinture (tape un code ou un nom)<input name="q" list="paints-list" autocomplete="off" required placeholder="70.83, Amber…" style="min-width:min(100%,360px)"></label>
+ <div class="sec-h"><b>{{s.name}}</b>
+ <form class="inline" method="post" action="/sections/{{s.id}}/delete" onsubmit="return confirm('Supprimer cet élément ?')"><button class="sec sm">Supprimer</button></form></div>
+ {% if s.note %}<div class="mut small">{{s.note}}</div>{% endif %}
+ <ul class="pl">{% for sp in x.paints %}<li><span class="sw sw-s" style="background:{{sp.hex or 'transparent'}}"></span>
+  {% if sp.detail %}<b>{{sp.detail}}</b><span class="mut">:</span>{% endif %}<b>{{sp.name}}</b> <span class="mut small">{{sp.brand}} {{sp.code}}</span>
+  <span class="badge tq">{{sp.technique}}</span>
+  {% if sp.status!='en_stock' %}<span class="badge s-{{sp.status}}">{{STATUTS[sp.status]}}</span>{% endif %}
+  <form class="inline" style="margin-left:auto" method="post" action="/section_paints/{{sp.id}}/delete"><button class="sec sm" title="Retirer">✕</button></form></li>
+ {% else %}<li class="mut small">Aucune peinture pour cet élément.</li>{% endfor %}</ul>
+ <form class="row" method="post" action="/sections/{{s.id}}/paints">
+  <label style="flex:2;min-width:220px">Peinture (code ou nom)<input name="q" list="paints-list" autocomplete="off" required placeholder="70.83, Amber…"></label>
   <label>Technique<select name="technique">{% for tq in TECHNIQUES %}<option>{{tq}}</option>{% endfor %}</select></label>
-  <label>Élément (optionnel)<input name="detail" placeholder="col, manches, poches…" size="18"></label><button class="sec">Ajouter</button></form>
-</div>{% endfor %}
+  <label style="flex:1;min-width:150px">Élément (optionnel)<input name="detail" placeholder="col, manches…"></label><button>Ajouter</button></form>
+</div>{% else %}<p class="empty card">Aucun élément. Ajoute la veste, le pantalon, le casque…</p>{% endfor %}
 <h2>Ajouter un élément</h2>
 <form class="card row" method="post" action="/projets/{{p.id}}/sections">
  <label>Élément<input name="name" required placeholder="Veste, pantalon, casque…"></label>
- <label>Note<input name="note"></label><button>Ajouter</button></form>
+ <label style="flex:1;min-width:150px">Note<input name="note"></label><button>Ajouter</button></form>
 <h2>Photos</h2>
-<div class="grid">{% for ph in photos %}<div class="card"><a href="/photos/{{ph.filename}}" target="_blank"><img src="/photos/{{ph.filename}}" alt=""></a>
-<form method="post" action="/photos/{{ph.id}}/delete"><button class="sec">Supprimer</button></form></div>{% endfor %}</div>
+<div class="photos">{% for ph in photos %}<div class="card"><a href="/photos/{{ph.filename}}" target="_blank"><img src="/photos/{{ph.filename}}" alt=""></a>
+<form method="post" action="/photos/{{ph.id}}/delete"><button class="sec sm">Supprimer</button></form></div>{% endfor %}</div>
 <form class="card row" method="post" action="/projets/{{p.id}}/photos" enctype="multipart/form-data">
- <input type="file" name="files" accept="image/*" multiple required><button>Envoyer</button></form>
+ <input type="file" name="files" accept="image/*" multiple required><button>Envoyer les photos</button></form>
 <h2>Modifier le projet</h2>
 <form class="card row" method="post" action="/projets/{{p.id}}/edit">
  <label>Nom<input name="name" value="{{p.name}}" required></label><label>Jeu<input name="game" value="{{p.game}}"></label>
  <label>Échelle<input name="scale" value="{{p.scale}}"></label><label>Faction<input name="faction" value="{{p.faction}}"></label>
- <label>Notes<textarea name="notes" rows="2">{{p.notes}}</textarea></label><button>Enregistrer</button></form>
-<form method="post" action="/projets/{{p.id}}/delete" onsubmit="return confirm('Supprimer ce projet et ses photos ?')"><button class="dng">Supprimer le projet</button></form>
+ <label style="flex:1;min-width:200px">Notes<textarea name="notes" rows="2">{{p.notes}}</textarea></label><button>Enregistrer</button></form>
+<form method="post" action="/projets/{{p.id}}/delete" onsubmit="return confirm('Supprimer ce projet et ses photos ?')"><button class="dng sm">Supprimer le projet</button></form>
 {% endblock %}

@@ -103,7 +103,7 @@ def back(url): return RedirectResponse(url, status_code=303)
 
 # ---------- Inventaire ----------
 @app.get("/")
-def inventory(request: Request, q: str = "", brand: str = "", type: str = "", status: str = ""):
+def inventory(request: Request, q: str = "", brand: str = "", type: str = "", status: str = "", vue: str = "cartes"):
     sql, args = "SELECT * FROM paints WHERE 1=1", []
     if q:
         sql += " AND (name LIKE ? OR code LIKE ? OR av_ref LIKE ? OR usage LIKE ?)"; args += [f"%{q}%"] * 4
@@ -117,7 +117,7 @@ def inventory(request: Request, q: str = "", brand: str = "", type: str = "", st
         types = [r[0] for r in c.execute("SELECT DISTINCT type FROM paints ORDER BY 1")]
         counts = {r[0]: r[1] for r in c.execute("SELECT status, COUNT(*) FROM paints GROUP BY status")}
     return templates.TemplateResponse(request, "inventory.html", dict(
-        paints=paints, brands=brands, types=types, counts=counts, q=q, brand=brand, type=type, status=status, page="inv"))
+        paints=paints, brands=brands, types=types, counts=counts, q=q, brand=brand, type=type, status=status, vue=vue if vue in ("cartes", "tableau") else "cartes", page="inv"))
 
 @app.post("/paints")
 def add_paint(brand: str = Form(...), range: str = Form(""), code: str = Form(""), av_ref: str = Form(""),

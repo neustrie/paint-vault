@@ -11,7 +11,7 @@ def render_project_pdf(p, secs, statuts):
     doc = SimpleDocTemplate(buf, pagesize=A4, leftMargin=15*mm, rightMargin=15*mm, topMargin=15*mm, bottomMargin=15*mm,
                             title=f"Fiche projet - {p['name']}")
     ss = getSampleStyleSheet()
-    h1 = ParagraphStyle("h1", parent=ss["Title"], fontSize=24, leading=28, alignment=0)
+    h1 = ParagraphStyle("h1", parent=ss["Title"], fontSize=26, leading=30, alignment=0, textColor=colors.HexColor("#c2410c"))
     meta = ParagraphStyle("meta", parent=ss["Normal"], fontSize=12, leading=16, textColor=colors.HexColor("#444444"))
     cell = ParagraphStyle("cell", parent=ss["Normal"], fontSize=12, leading=15)
     bold = ParagraphStyle("bold", parent=cell, fontName="Helvetica-Bold")
@@ -21,7 +21,7 @@ def render_project_pdf(p, secs, statuts):
     if line: story.append(Paragraph(E(line), meta))
     if p["notes"]: story += [Spacer(1, 3*mm), Paragraph(E(p["notes"]).replace("\n", "<br/>"), cell)]
     story.append(Spacer(1, 6*mm))
-    rows = [[Paragraph("Élément", bold), Paragraph("Peinture(s) et technique", bold)]]
+    rows = [[Paragraph("<font color=white>Élément</font>", bold), Paragraph("<font color=white>Peinture(s) et technique</font>", bold)]]
     for s in secs:
         sec = s["s"]; lines = []
         for sp in s["paints"]:
@@ -34,7 +34,7 @@ def render_project_pdf(p, secs, statuts):
         rows.append([Paragraph(E(sec["name"]), bold),
                      Paragraph("<br/>".join(lines) or "-", cell)])
     t = Table(rows, colWidths=[45*mm, 135*mm], repeatRows=1)
-    t.setStyle(TableStyle([("GRID", (0, 0), (-1, -1), 0.6, colors.grey), ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#e6e6e6")),
+    t.setStyle(TableStyle([("LINEBELOW", (0, 0), (-1, -1), 0.5, colors.HexColor("#d9d0bf")), ("BOX", (0, 0), (-1, -1), 0.8, colors.HexColor("#2a2420")), ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#2a2420")), ("TEXTCOLOR", (0, 0), (-1, 0), colors.white), ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f6f1e8")]),
                            ("VALIGN", (0, 0), (-1, -1), "TOP"), ("TOPPADDING", (0, 0), (-1, -1), 5), ("BOTTOMPADDING", (0, 0), (-1, -1), 5)]))
     story.append(t)
     doc.build(story)

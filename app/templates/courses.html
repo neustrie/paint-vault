@@ -1,11 +1,13 @@
 {% extends "base.html" %}{% block body %}
-<h1>Liste de courses <span class="mut">({{paints|length}})</span></h1>
+<h1>Liste de courses <span class="mut" style="font-size:.55em;font-weight:500">{{paints|length}} à acheter</span></h1>
 <p class="mut">Pots vides et peintures à commander. « Reçu » remet la peinture en stock.</p>
-<table><tr><th>Marque</th><th>Code</th><th>Nom</th><th>Statut</th><th></th></tr>
-{% for p in paints %}<tr><td>{{p.brand}}<br><span class="mut">{{p.range}}</span></td><td>{{p.code}}</td><td><span class="sw sw-s" style="background:{{p.hex or 'transparent'}}"></span>{{p.name}}</td>
-<td><span class="badge s-{{p.status}}">{{STATUTS[p.status]}}</span></td><td>
-{% if p.status!='commande' %}<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="commande"><input type="hidden" name="next" value="/courses"><button class="sec">Commandé</button></form>{% endif %}
-<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="en_stock"><input type="hidden" name="next" value="/courses"><button>Reçu</button></form></td></tr>
-{% else %}<tr><td colspan="5" class="mut">Rien à acheter.</td></tr>{% endfor %}</table>
-<h2>Marquer « à commander » une peinture en stock</h2><p class="mut">Depuis la fiche d'une peinture (inventaire → clic sur le nom → statut).</p>
+<table><tr><th>Peinture</th><th>Code</th><th class="hide-m">Marque</th><th>Statut</th><th></th></tr>
+{% for p in paints %}<tr>
+<td><div style="display:flex;align-items:center"><span class="sw" style="background:{{p.hex or 'transparent'}}"></span><b>{{p.name}}</b></div></td>
+<td>{{p.code}}</td><td class="hide-m">{{p.brand}}<br><span class="mut small">{{p.range}}</span></td>
+<td><span class="badge s-{{p.status}}">{{STATUTS[p.status]}}</span></td><td style="text-align:right;white-space:nowrap">
+{% if p.status!='commande' %}<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="commande"><input type="hidden" name="next" value="/courses"><button class="sec sm">Commandé</button></form>{% endif %}
+<form class="inline" method="post" action="/paints/{{p.id}}/status"><input type="hidden" name="status" value="en_stock"><input type="hidden" name="next" value="/courses"><button class="sm">Reçu</button></form></td></tr>
+{% else %}<tr><td colspan="5" class="empty">🎉 Rien à acheter.</td></tr>{% endfor %}</table>
+<p class="mut small" style="margin-top:14px">Pour marquer « À commander » une peinture en stock : inventaire → clic sur son nom → statut.</p>
 {% endblock %}
