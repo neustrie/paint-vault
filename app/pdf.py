@@ -24,13 +24,12 @@ def render_project_pdf(p, secs, statuts):
     rows = [[Paragraph("Élément", bold), Paragraph("Peinture(s) et technique", bold)]]
     for s in secs:
         sec = s["s"]; lines = []
-        mix = len(s["paints"]) > 1
         for sp in s["paints"]:
             ref = f"{sp['brand']} {sp['code']}".strip()
-            part = f"{sp['parts']} part(s) · " if mix and sp["parts"] else ""
+            part = f"<b>{E(sp['detail'])}</b> : " if sp["detail"] else ""
             warn = "  [À RACHETER]" if sp["status"] != "en_stock" else ""
             sw = f'<font color="{sp["hex"]}">■■</font> ' if sp["hex"] else ""
-            lines.append(f"{sw}{E(part)}<b>{E(sp['name'])}</b> ({E(ref)}) — <i>{E(sp['technique'])}</i>{warn}")
+            lines.append(f"{part}{sw}<b>{E(sp['name'])}</b> ({E(ref)}) — <i>{E(sp['technique'])}</i>{warn}")
         if sec["note"]: lines.append(f"<i>{E(sec['note'])}</i>")
         rows.append([Paragraph(E(sec["name"]), bold),
                      Paragraph("<br/>".join(lines) or "-", cell)])
