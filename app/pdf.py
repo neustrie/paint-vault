@@ -21,7 +21,7 @@ def render_project_pdf(p, secs, statuts):
     if line: story.append(Paragraph(E(line), meta))
     if p["notes"]: story += [Spacer(1, 3*mm), Paragraph(E(p["notes"]).replace("\n", "<br/>"), cell)]
     story.append(Spacer(1, 6*mm))
-    rows = [[Paragraph("Élément", bold), Paragraph("Technique", bold), Paragraph("Peinture(s)", bold)]]
+    rows = [[Paragraph("Élément", bold), Paragraph("Peinture(s) et technique", bold)]]
     for s in secs:
         sec = s["s"]; lines = []
         mix = len(s["paints"]) > 1
@@ -30,12 +30,12 @@ def render_project_pdf(p, secs, statuts):
             part = f"{sp['parts']} part(s) · " if mix and sp["parts"] else ""
             warn = "  [À RACHETER]" if sp["status"] != "en_stock" else ""
             sw = f'<font color="{sp["hex"]}">■■</font> ' if sp["hex"] else ""
-            lines.append(f"{sw}{E(part)}<b>{E(sp['name'])}</b> ({E(ref)}){warn}")
+            lines.append(f"{sw}{E(part)}<b>{E(sp['name'])}</b> ({E(ref)}) — <i>{E(sp['technique'])}</i>{warn}")
         if mix: lines.insert(0, "<i>Mélange :</i>")
         if sec["note"]: lines.append(f"<i>{E(sec['note'])}</i>")
-        rows.append([Paragraph(E(sec["name"]), bold), Paragraph(E(sec["technique"]), cell),
+        rows.append([Paragraph(E(sec["name"]), bold),
                      Paragraph("<br/>".join(lines) or "-", cell)])
-    t = Table(rows, colWidths=[45*mm, 38*mm, 97*mm], repeatRows=1)
+    t = Table(rows, colWidths=[45*mm, 135*mm], repeatRows=1)
     t.setStyle(TableStyle([("GRID", (0, 0), (-1, -1), 0.6, colors.grey), ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#e6e6e6")),
                            ("VALIGN", (0, 0), (-1, -1), "TOP"), ("TOPPADDING", (0, 0), (-1, -1), 5), ("BOTTOMPADDING", (0, 0), (-1, -1), 5)]))
     story.append(t)

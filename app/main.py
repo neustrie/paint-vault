@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS sections(
   name TEXT NOT NULL, technique TEXT DEFAULT 'Base', note TEXT DEFAULT '', pos INTEGER DEFAULT 0);
 CREATE TABLE IF NOT EXISTS section_paints(
   id INTEGER PRIMARY KEY, section_id INTEGER NOT NULL REFERENCES sections(id) ON DELETE CASCADE,
-  paint_id INTEGER NOT NULL REFERENCES paints(id), parts INTEGER);
+  paint_id INTEGER NOT NULL REFERENCES paints(id), parts INTEGER, technique TEXT DEFAULT 'Base');
 CREATE TABLE IF NOT EXISTS photos(
   id INTEGER PRIMARY KEY, project_id INTEGER NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
   filename TEXT NOT NULL);
@@ -48,6 +48,9 @@ def init():
     with closing(db()) as c:
         c.execute("PRAGMA journal_mode=WAL")
         c.executescript(SCHEMA)
+        if "technique" not in [r[1] for r in c.execute("PRAGMA table_info(section_paints)")]:
+            c.execute("ALTER TABLE section_paints ADD COLUMN technique TEXT DEFAULT 'Base'")
+            c.execute("UPDATE section_paints SET technique=(SELECT technique FROM sections WHERE sections.id=section_paints.section_id)")
         if "hex" not in [r[1] for r in c.execute("PRAGMA table_info(paints)")]:
             c.execute("ALTER TABLE paints ADD COLUMN hex TEXT DEFAULT ''")
         if c.execute("SELECT COUNT(*) FROM paints").fetchone()[0] == 0:
@@ -185,7 +188,7 @@ def load_project(c, pid):
     if not p: return None, [], []
     secs = []
     for s in c.execute("SELECT * FROM sections WHERE project_id=? ORDER BY pos, id", (pid,)):
-        sp = c.execute("""SELECT sp.id, sp.parts, pa.id AS paint_id, pa.hex, pa.brand, pa.code, pa.name, pa.status FROM section_paints sp
+        sp = c.execute("""SELECT sp.id, sp.parts, sp.technique, pa.id AS paint_id, pa.hex, pa.brand, pa.code, pa.name, pa.status FROM section_paints sp
                           JOIN paints pa ON pa.id=sp.paint_id WHERE sp.section_id=? ORDER BY sp.id""", (s["id"],)).fetchall()
         secs.append(dict(s=s, paints=sp))
     photos = c.execute("SELECT * FROM photos WHERE project_id=? ORDER BY id", (pid,)).fetchall()
@@ -232,7 +235,7 @@ def paint_label(p):
     return f"{p['code']} — {p['name']} ({p['brand']})" if p["code"] else f"{p['name']} ({p['brand']})"
 
 @app.post("/sections/{sid}/paints")
-def add_section_paint(sid: int, q: str = Form(""), parts: str = Form("")):
+def add_section_paint(sid: int, q: str = Form(""), parts: str = Form(""), technique: str = Form("Base")):
     q = q.strip()
     with closing(db()) as c:
         r = c.execute("SELECT project_id FROM sections WHERE id=?", (sid,)).fetchone()
@@ -244,7 +247,7 @@ def add_section_paint(sid: int, q: str = Form(""), parts: str = Form("")):
         if len(ids) != 1:
             msg = "Aucune peinture ne correspond à" if not found else "Plusieurs peintures correspondent à"
             return back(f"/projets/{r[0]}?err=" + quote(f"{msg} « {q} » : choisis une proposition de la liste."))
-        c.execute("INSERT INTO section_paints(section_id,paint_id,parts) VALUES(?,?,?)", (sid, ids.pop(), int(parts) if parts.strip().isdigit() else None)); c.commit()
+        c.execute("INSERT INTO section_paints(section_id,paint_id,parts,technique) VALUES(?,?,?,?)", (sid, ids.pop(), int(parts) if parts.strip().isdigit() else None, technique if technique in TECHNIQUES else "Autre")); c.commit()
     return back(f"/projets/{r[0]}")
 
 @app.post("/section_paints/{spid}/delete")
