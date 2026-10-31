@@ -31,7 +31,6 @@ def render_project_pdf(p, secs, statuts):
             warn = "  [À RACHETER]" if sp["status"] != "en_stock" else ""
             sw = f'<font color="{sp["hex"]}">■■</font> ' if sp["hex"] else ""
             lines.append(f"{sw}{E(part)}<b>{E(sp['name'])}</b> ({E(ref)}) — <i>{E(sp['technique'])}</i>{warn}")
-        if mix: lines.insert(0, "<i>Mélange :</i>")
         if sec["note"]: lines.append(f"<i>{E(sec['note'])}</i>")
         rows.append([Paragraph(E(sec["name"]), bold),
                      Paragraph("<br/>".join(lines) or "-", cell)])
